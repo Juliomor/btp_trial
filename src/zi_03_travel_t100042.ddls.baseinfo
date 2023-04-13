@@ -6,7 +6,11 @@
 "/DMO/TRAVEL"
 ],
 "ASSOCIATED":
-[],
+[
+"/DMO/I_AGENCY",
+"/DMO/I_CUSTOMER",
+"ZI_04_BOOKING_T100042"
+],
 "BASE":
 [],
 "ANNO_REF":

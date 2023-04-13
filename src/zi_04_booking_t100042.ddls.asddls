@@ -9,6 +9,8 @@
 }
 define view entity ZI_04_Booking_T100042
   as select from /dmo/booking
+  association to parent ZI_03_Travel_T100042   as _Travel on $projection.TravelId = _Travel.TravelId
+  composition [0..*] of ZI_05_BSUPL_USUARIOSAP as _BookingSup
 {
   key travel_id     as TravelId,
   key booking_id    as BookingId,
@@ -19,5 +21,7 @@ define view entity ZI_04_Booking_T100042
       flight_date   as FlightDate,
       @Semantics.amount.currencyCode: 'CurrencyCode'
       flight_price  as FlightPrice,
-      currency_code as CurrencyCode
+      currency_code as CurrencyCode,
+      _Travel,
+      _BookingSup
 }
